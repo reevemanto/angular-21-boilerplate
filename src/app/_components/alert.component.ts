@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -8,6 +9,8 @@ import { AlertService } from '@app/_services';
 @Component({
   selector: 'alert', templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css'],
+  standalone: true,
+  imports: [CommonModule],
   providers: [
     { provide: AlertService, useClass: AlertService },
     { provide: 'APP_NAME', useValue: 'Alert' }
@@ -40,7 +43,7 @@ export class AlertComponent implements OnInit, OnDestroy {
         // clear alerts when an empty alert is received
         if (!alert.message) {
           this.alerts = this.alerts.filter(x => x.keepAfterRouteChange);
-          this.alerts = this.alerts.map(({ keepAfterRouteChange, ...rest }) => rest as Alert);
+          this.alerts = this.alerts.map(({ keepAfterRouteChange, ...rest }) => rest);
           this.scheduleDetectChanges();
           return;
         }

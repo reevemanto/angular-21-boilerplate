@@ -15,11 +15,11 @@ import { HomeComponent } from './home';
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        AlertComponent
     ],
     declarations: [
         AppComponent,
-        AlertComponent,
         HomeComponent
     ],
     providers: [
