@@ -12,14 +12,14 @@ enum EmailStatus {
 @Component({ templateUrl: 'verify-email.component.html', standalone: false })
 export class VerifyEmailComponent implements OnInit {
     EmailStatus = EmailStatus;
-    emailStatus = EmailStatus.Verifying;
+    emailStatus = EmailStatus. Verifying;
 
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
-    ) {}
+    ) { }
 
     ngOnInit() {
         const token = this.route.snapshot.queryParams['token'];

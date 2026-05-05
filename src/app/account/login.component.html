@@ -6,7 +6,6 @@
             <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">Email is required</div>
-                <div *ngIf="f.email.errors.email">Email is invalid</div>
             </div>
         </div>
         <div class="mb-3">
@@ -25,7 +24,7 @@
                 <a routerLink="../register" class="btn btn-link">Register</a>
             </div>
             <div class="mb-3 col text-end">
-                <a routerLink="../forgot-password" class="btn btn-link pe-0">Forgot Password</a>
+                <a routerLink="../forgot-password" class="btn btn-link pe-8">Forgot Password?</a>
             </div>
         </div>
     </form>

@@ -12,9 +12,7 @@ enum TokenStatus {
     Invalid
 }
 
-@Component({
-    templateUrl: 'reset-password.component.html', standalone: false
-})
+@Component({ templateUrl: 'reset-password.component.html', standalone: false })
 export class ResetPasswordComponent implements OnInit {
     TokenStatus = TokenStatus;
     tokenStatus = TokenStatus.Validating;
@@ -29,12 +27,12 @@ export class ResetPasswordComponent implements OnInit {
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.form = this.formBuilder.group({
             password: ['', [Validators.required, Validators.minLength(6)]],
-            confirmPassword: ['', Validators.required],
+            confirmPassword: ['', Validators.required]
         }, {
             validator: MustMatch('password', 'confirmPassword')
         });

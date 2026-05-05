@@ -9,6 +9,7 @@
                     <option value="Mr">Mr</option>
                     <option value="Mrs">Mrs</option>
                     <option value="Miss">Miss</option>
+                    <option value="Ms">Ms</option>
                 </select>
                 <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
                     <div *ngIf="f.title.errors.required">Title is required</div>
@@ -58,14 +59,14 @@
         <div class="mb-3 form-check">
             <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
             <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
-            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Terms & Conditions is required</div>
         </div>
         <div class="mb-3">
             <button [disabled]="submitting" class="btn btn-primary">
                 <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
                 Register
             </button>
-            <a routerLink="../login" class="btn btn-link">Cancel</a>
+            <a routerLink="../login" href="" class="btn btn-link">Cancel</a>
         </div>
     </form>
 </div>

@@ -35,7 +35,6 @@ export class AlertService {
     alert(alert: Alert) {
         alert.id = alert.id || this.defaultId;
         alert.autoClose = (alert.autoClose === undefined ? true : alert.autoClose);
-        alert.fade = (alert.fade === undefined ? false : alert.fade);
         this.subject.next(alert);
     }
 

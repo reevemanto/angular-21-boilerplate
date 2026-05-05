@@ -19,4 +19,5 @@ import { UpdateComponent } from './update.component';
         UpdateComponent
     ]
 })
-export class ProfileModule {}
+
+export class ProfileModule { }

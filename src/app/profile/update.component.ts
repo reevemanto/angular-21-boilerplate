@@ -21,12 +21,12 @@ export class UpdateComponent implements OnInit {
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
-    ) {}
+    ) { }
 
     ngOnInit() {
-        this.account = this.accountService.accountValue!;
+        this.account = this.accountService.accountValue !;
 
-        this.form = this.formBuilder.group({
+        this. form = this.formBuilder.group({
             title: [this.account.title, Validators.required],
             firstName: [this.account.firstName, Validators.required],
             lastName: [this.account.lastName, Validators.required],
@@ -34,11 +34,11 @@ export class UpdateComponent implements OnInit {
             password: ['', [Validators.minLength(6)]],
             confirmPassword: ['']
         }, {
-            validator: MustMatch('password', 'confirmPassword')
+            validator: MustMatch('password', 'confirmPassword' )
         });
     }
 
-    // convenience getter for easy access to form fields
+        // convenience getter for easy access to form fields
     get f() { return this.form.controls; }
 
     onSubmit() {
@@ -60,6 +60,7 @@ export class UpdateComponent implements OnInit {
                     this.alertService.success('Update successful', { keepAfterRouteChange: true });
                     this.router.navigate(['../'], { relativeTo: this.route });
                 },
+
                 error: error => {
                     this.alertService.error(error);
                     this.submitting = false;
@@ -73,7 +74,7 @@ export class UpdateComponent implements OnInit {
             this.accountService.delete(this.account.id!)
                 .pipe(first())
                 .subscribe(() => {
-                    this.alertService.success('Account deleted successfully', { keepAfterRouteChange: true });
+                    this.alertService.success('Account deleted successfully', { keepAfterRouteChange: true }) ;
                 });
         }
     }

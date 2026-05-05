@@ -7,7 +7,7 @@ import { AccountService, AlertService } from '@app/_services';
 
 @Component({ templateUrl: 'login.component.html', standalone: false })
 export class LoginComponent implements OnInit {
-    form!: FormGroup;
+    form !: FormGroup;
     submitting = false;
     submitted = false;
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
         private accountService: AccountService,
         private alertService: AlertService,
         private cdr: ChangeDetectorRef
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -47,9 +47,10 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '';
+                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                     this.router.navigateByUrl(returnUrl);
                 },
+
                 error: error => {
                     setTimeout(() => {
                         this.alertService.error(error);

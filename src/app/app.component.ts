@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { AccountService } from './_services';
 import { Account, Role } from './_models';
 
@@ -11,7 +12,7 @@ export class AppComponent {
         this.accountService.account.subscribe(x => this.account = x);
     }
 
-    logout() {
-        this.accountService.logout();
+    Logout() {
+        this.accountService.Logout();
     }
 }

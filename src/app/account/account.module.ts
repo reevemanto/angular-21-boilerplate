@@ -16,6 +16,7 @@ import { ResetPasswordComponent } from './reset-password.component';
         ReactiveFormsModule,
         AccountRoutingModule
     ],
+
     declarations: [
         LayoutComponent,
         LoginComponent,
@@ -25,4 +26,4 @@ import { ResetPasswordComponent } from './reset-password.component';
         ResetPasswordComponent
     ]
 })
-export class AccountModule {}
+export class AccountModule { }

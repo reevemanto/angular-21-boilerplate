@@ -14,11 +14,16 @@ const routes: Routes = [
     { path: 'account', loadChildren: accountModule },
     { path: 'profile', loadChildren: profileModule, canActivate: [AuthGuard] },
     { path: 'admin', loadChildren: adminModule, canActivate: [AuthGuard], data: { roles: [Role.Admin] } },
-    { path: '**', redirectTo: '' }
-];
 
-@NgModule({
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
+
+    ];
+
+    @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
-})
-export class AppRoutingModule {}
+
+    })
+
+    export class AppRoutingModule { }

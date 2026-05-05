@@ -8,6 +8,7 @@
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
             </select>
             <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
                 <div *ngIf="f.title.errors.required">Title is required</div>
@@ -36,7 +37,6 @@
             <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
         </div>
     </div>
-
     <h3 class="pt-3">Change Password</h3>
     <p>Leave blank to keep the same password</p>
     <div class="row">

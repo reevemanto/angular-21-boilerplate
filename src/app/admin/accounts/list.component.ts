@@ -14,7 +14,7 @@ export class ListComponent implements OnInit, OnDestroy {
         private accountService: AccountService,
         private alertService: AlertService,
         private cdr: ChangeDetectorRef
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.loading = true;
@@ -46,7 +46,7 @@ export class ListComponent implements OnInit, OnDestroy {
                     this.accounts = accounts;
                     this.cdr.detectChanges();
                 },
-                error: error => {
+                error: (error: any) => {
                     this.alertService.error(error);
                     this.accounts = [];
                     this.cdr.detectChanges();

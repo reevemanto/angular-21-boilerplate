@@ -13,10 +13,12 @@ import { OverviewComponent } from './overview.component';
         ReactiveFormsModule,
         AdminRoutingModule
     ],
+    
     declarations: [
         SubNavComponent,
         LayoutComponent,
         OverviewComponent
     ]
 })
-export class AdminModule {}
+
+export class AdminModule { }

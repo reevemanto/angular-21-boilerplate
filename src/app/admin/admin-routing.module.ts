@@ -10,6 +10,7 @@ const accountsModule = () => import('./accounts/accounts.module').then(x => x.Ac
 const routes: Routes = [
     { path: '', component: SubNavComponent, outlet: 'subnav' },
     {
+
         path: '', component: LayoutComponent,
         children: [
             { path: '', component: OverviewComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule. forChild(routes) ],
     exports: [RouterModule]
 })
-export class AdminRoutingModule {}
+
+export class AdminRoutingModule { }
