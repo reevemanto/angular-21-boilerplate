@@ -46,14 +46,19 @@ export class AccountService {
     }
 
     refreshToken() {
-        return this.http.post<any>(`${baseUrl}/refresh-token`, {}, { withCredentials: true })
-            .pipe(map((account) => {
-                this.accountSubject.next(account);
+    return this.http.post<any>(`${baseUrl}/refresh-token`, {}, { withCredentials: true })
+        .pipe(map((response) => {
+            // Only set account if response has an id (valid account)
+            if (response && response.id) {
+                this.accountSubject.next(response);
                 this.startRefreshTokenTimer();
-                return account;
-            }));
-    }
-
+                return response;
+            }
+            // If no valid account, ensure subject is null
+            this.accountSubject.next(null);
+            return null;
+        }));
+}
     register(account: Account) {
         return this.http.post(`${baseUrl}/register`, account);
 
