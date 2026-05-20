@@ -1,59 +1,46 @@
-# Angular21Boilerplate
+# Angular 21 Authentication Boilerplate
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+**Version:** 0.0.0
 
-## Development server
+## Live Application
+[https://angular-21-boilerplate-19yp.onrender.com](https://angular-21-boilerplate-19yp.onrender.com)
 
-To start a local development server, run:
+## Backend API
+[https://typescript-auth-api.onrender.com](https://typescript-auth-api.onrender.com)
 
-```bash
-ng serve
-```
+## API Documentation
+[https://typescript-auth-api.onrender.com/api-docs](https://typescript-auth-api.onrender.com/api-docs)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Environment Files
+- `src/environments/environment.ts` - Development configuration
+- `src/environments/environment.prod.ts` - Production configuration
 
-## Code scaffolding
+## Setup Instructions
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Development
+1. Clone the repository
+2. Run `npm install`
+3. Run `ng serve` and navigate to `http://localhost:4200`
 
-```bash
-ng generate component component-name
-```
+### Production Build
+1. Update `src/environments/environment.prod.ts` with your backend API URL
+2. Run `ng build --configuration production`
+3. Deploy the `dist/angular-21-boilerplate` folder
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Testing with Fake Backend
+//...(environment.production ? [] : [fakeBackendProvider]) //disable backend
+ //[fakeBackendProvider]  // Always enable fake backend
 
-```bash
-ng generate --help
-```
+## Features
+- Email sign up and verification
+- JWT authentication with refresh tokens
+- Role-based authorization (Admin & User)
+- Forgot password and reset password
+- Profile management
+- Admin dashboard
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Tech Stack
+- Angular 21
+- Bootstrap 5
+- RxJS
+- JWT Authentication
